@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BlogList from "./BlogList";
 
 const Home = () => {
   // eslint-disable-next-line no-unused-vars
@@ -8,17 +9,11 @@ const Home = () => {
     {title: "HAHAHAH", body: "lorem ipsum...", id: 3}
   ]);
 
-
   return (
     <div className="home">
-        {blogs.map((e) => (
-            <div className="blog-preview" key={e.id}>
-                <h2>{e.title}</h2>
-                <p>{e.body}</p>
-            </div>
-        ))}
+      <BlogList blogs={blogs} title="Title"/>
     </div>
   );
-};
+}
 
 export default Home;
