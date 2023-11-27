@@ -1,19 +1,22 @@
 import { useState } from "react";
 
 const Home = () => {
-  let [name, setName] = useState("Ubay");
-  let [age, setAge] = useState(18);
+  // eslint-disable-next-line no-unused-vars
+  const [blogs, setBlogs] = useState([
+    {title: "My new website", body: "lorem ipsum...", id: 1},
+    {title: "Welcome to my porto", body: "lorem ipsum...", id: 2},
+    {title: "HAHAHAH", body: "lorem ipsum...", id: 3}
+  ]);
 
-  const handleClickAgain = () => {
-    setName("Dillah");
-    setAge(19);
-  };
 
   return (
     <div className="home">
-      <h2>Homepage</h2>
-      <p>My name is {name}, and im {age} years old</p>
-      <button onClick={handleClickAgain}>Click Again</button>
+        {blogs.map((e) => (
+            <div className="blog-preview" key={e.id}>
+                <h2>{e.title}</h2>
+                <p>{e.body}</p>
+            </div>
+        ))}
     </div>
   );
 };
