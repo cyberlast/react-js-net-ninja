@@ -4,7 +4,11 @@ const Navbar = () => {
             <h1>Kenzy</h1>
             <div className="links">
                 <a href="/">Home</a>
-                <a href="/crate">New Block</a>
+                <a href="/crate" style={{
+                    color: "white",
+                    backgroundColor: "#f1356d",
+                    borderRadius: "8px"
+                }}>New Block</a>
             </div>
         </nav>
      );
